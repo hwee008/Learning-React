@@ -5,7 +5,7 @@ import './index.css';
 function Lake({name}){
   return(
     <div>
-      <h1>Visit {name}!</h1>aaa
+      <h1>Visit {name}!</h1>
     </div>
   );
 }
@@ -18,13 +18,15 @@ function Lake({name}){
     );
   }
 
-  function App({season}){
-    if(season==="summer"){
-      return<Lake name="Jenny Lake"/>;
-    }else if(season==="winter"){
-      return <SkiResort name="JHMR"/>;
-    }
+  function App(props){
+    return(
+      //condition ? component to render if true : component to render if false
+      <div>
+        {(props.season==="summer" ? <Lake name="Jenny Lake"/> :<SkiResort name="JHMR"/> )}
+      </div>
+    )
   }
+  
 ReactDOM.render(
  <App season="winter"/>,
   document.getElementById('root')
