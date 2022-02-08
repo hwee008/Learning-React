@@ -2,33 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Lake({name}){
+function Lake(){
   return(
-    <div>
-      <h1>Visit {name}!</h1>
-    </div>
+      <h1>Lake!</h1>
   );
 }
 
-  function SkiResort({name}){
+  function SkiResort(){
     return(
-      <div>
-        <h1>Visit {name}!</h1>
-      </div>
+        <h1>Ski Resort!</h1>
     );
   }
 
-  function App(props){
+  function App(){
     return(
-      //condition ? component to render if true : component to render if false
-      <div>
-        {(props.season==="summer" ? <Lake name="Jenny Lake"/> :<SkiResort name="JHMR"/> )}
-      </div>
-    )
+      //fragment allows rendering both element at the same time without 
+      //causing creation of many divs
+      <>
+          <Lake/>
+          <SkiResort/>
+      </>
+    
+    );
   }
   
 ReactDOM.render(
- <App season="winter"/>,
+ <App />,
   document.getElementById('root')
 );
 
