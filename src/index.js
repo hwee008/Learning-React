@@ -27,7 +27,18 @@ function Lake(){
   }
   
 ReactDOM.render(
- <App />,
+ <App name="GraphQL"/>,
   document.getElementById('root')
 );
 
+//Excercise view it in console log (ARRAY DESTRUCTURING)
+//Example 1
+/*
+const [first,second,third] = ["popcorn","pretzels","pineapple"];
+console.log(first);
+console.log(second);
+*/
+
+//Example 2
+const [,,fruit] = ["popcorn","pretzels","pineapple"];
+console.log(fruit);
